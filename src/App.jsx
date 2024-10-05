@@ -3,10 +3,16 @@ import "./App.css";
 import Header from "./Components/Header";
 import TodoHeading from "./Components/TodoHeading";
 
+
+
 function App() {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
   const ref = useRef();
+  useEffect(() => {
+    document.title = "To-Do App";
+  }, []);
+  
 
   const handleChange = (e) => {
     setTodo(e.target.value);
