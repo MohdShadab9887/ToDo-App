@@ -3,16 +3,14 @@ import "./App.css";
 import Header from "./Components/Header";
 import TodoHeading from "./Components/TodoHeading";
 
-
-
 function App() {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
   const ref = useRef();
+
   useEffect(() => {
     document.title = "To-Do App";
   }, []);
-  
 
   const handleChange = (e) => {
     setTodo(e.target.value);
@@ -91,7 +89,7 @@ function App() {
             key={i}
             // className=""
             className={`m-auto mt-2 flex h-[60px] w-[600px] items-center justify-between rounded-xl border-black px-3 font-bold shadow-md transition-all hover:scale-105 hover:shadow-2xl ${
-              item.token ? "bg-green-400" : ""
+              item.token ? "bg-green-300" : ""
             }`}
           >
             <div>{i + 1}.</div>
@@ -107,7 +105,7 @@ function App() {
             />
             <input
               className={`flex w-[65%] items-center rounded-md bg-white px-1 text-lg ${
-                item.token ? "bg-green-400 font-light line-through" : ""
+                item.token ? "bg-green-300 font-light line-through" : ""
               }`}
               value={item.todo}
               onChange={(e) => {
